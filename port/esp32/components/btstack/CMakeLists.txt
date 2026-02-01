@@ -6,41 +6,41 @@ if (CMAKE_HOST_WIN32)
 endif()
 
 set(include_dirs
-    "3rd-party/bluedroid/decoder/include"
-    "3rd-party/bluedroid/encoder/include"
-    "3rd-party/hxcmod-player"
-    "3rd-party/hxcmod-player/mods"
-    "3rd-party/lc3-google/include"
-    "3rd-party/lwip/dhcp-server"
-    "3rd-party/md5"
-    "3rd-party/yxml"
-    "src/classic"
-    "src/ble/gatt-service"
-    "src/ble"
-    "src/classic"
-    "src"
-    "platform/embedded"
-    "platform/freertos"
-    "platform/lwip"
+    "${BTSTACK_ROOT}/3rd-party/bluedroid/decoder/include"
+    "${BTSTACK_ROOT}/3rd-party/bluedroid/encoder/include"
+    "${BTSTACK_ROOT}/3rd-party/hxcmod-player"
+    "${BTSTACK_ROOT}/3rd-party/hxcmod-player/mods"
+    "${BTSTACK_ROOT}/3rd-party/lc3-google/include"
+    "${BTSTACK_ROOT}/3rd-party/lwip/dhcp-server"
+    "${BTSTACK_ROOT}/3rd-party/md5"
+    "${BTSTACK_ROOT}/3rd-party/yxml"
+    "${BTSTACK_ROOT}/src/classic"
+    "${BTSTACK_ROOT}/src/ble/gatt-service"
+    "${BTSTACK_ROOT}/src/ble"
+    "${BTSTACK_ROOT}/src/classic"
+    "${BTSTACK_ROOT}/src"
+    "${BTSTACK_ROOT}/platform/embedded"
+    "${BTSTACK_ROOT}/platform/freertos"
+    "${BTSTACK_ROOT}/platform/lwip"
     "${IDF_PATH}/components/lwip/lwip/src/include"
     "include")
 
 set(src_dirs
-    "3rd-party/bluedroid/decoder/srce"
-    "3rd-party/bluedroid/encoder/srce"
-    "3rd-party/hxcmod-player"
-    "3rd-party/hxcmod-player/mods"
-    "3rd-party/lwip/dhcp-server"
-    "3rd-party/md5"
-    "3rd-party/micro-ecc"
-    "3rd-party/yxml"
-    "src/ble/gatt-service"
-    "src/ble"
-    "src/mesh"
-    "src/"
-    "platform/embedded"
-    "platform/freertos"
-    "platform/lwip"
+    "${BTSTACK_ROOT}/3rd-party/bluedroid/decoder/srce"
+    "${BTSTACK_ROOT}/3rd-party/bluedroid/encoder/srce"
+    "${BTSTACK_ROOT}/3rd-party/hxcmod-player"
+    "${BTSTACK_ROOT}/3rd-party/hxcmod-player/mods"
+    "${BTSTACK_ROOT}/3rd-party/lwip/dhcp-server"
+    "${BTSTACK_ROOT}/3rd-party/md5"
+    "${BTSTACK_ROOT}/3rd-party/micro-ecc"
+    "${BTSTACK_ROOT}/3rd-party/yxml"
+    "${BTSTACK_ROOT}/src/ble/gatt-service"
+    "${BTSTACK_ROOT}/src/ble"
+    "${BTSTACK_ROOT}/src/mesh"
+    "${BTSTACK_ROOT}/src/"
+    "${BTSTACK_ROOT}/platform/embedded"
+    "${BTSTACK_ROOT}/platform/freertos"
+    "${BTSTACK_ROOT}/platform/lwip"
     "${IDF_PATH}/components/lwip/lwip/src/apps/http"
     ".")
 
@@ -55,11 +55,11 @@ else()
 endif()
 
 if(CONFIG_IDF_TARGET_ESP32)
-        list(APPEND src_dirs "src/classic")
+        list(APPEND src_dirs "${BTSTACK_ROOT}/src/classic")
 endif()
 
 set(priv_include_dirs
-        "3rd-party/micro-ecc"
+        "${BTSTACK_ROOT}/3rd-party/micro-ecc"
         )
 
 set(priv_requires
