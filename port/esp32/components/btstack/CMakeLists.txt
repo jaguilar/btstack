@@ -1,8 +1,12 @@
 # Needed to include the lwIP's HTTP app, which is not included by default.
 set(IDF_PATH $ENV{IDF_PATH})
 
-idf_component_get_property(BTSTACK_ROOT btstack_lib COMPONENT_DIR)
+# Note, if the library is in managed_components, it will have the bluekitchen
+# prefixed to its name, and the double-underscore is what replaces the slash
+# in idf_components.yml from the perspective of cmake.
+idf_component_get_property(BTSTACK_ROOT bluekitchen__btstack_lib COMPONENT_DIR)
 message(STATUS "The 'btstack_lib' IDF component is at ${BTSTACK_ROOT}")
+
 
 if (CMAKE_HOST_WIN32)
     string(REPLACE "\\" "/" IDF_PATH $ENV{IDF_PATH})
