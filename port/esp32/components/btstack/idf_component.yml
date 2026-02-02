@@ -4,4 +4,3 @@ dependencies:
   bluekitchen/btstack_lib:
     git: https://github.com/jaguilar/btstack.git
     version: bluepad32
-    type: git
